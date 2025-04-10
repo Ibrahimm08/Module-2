@@ -1,0 +1,41 @@
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: navy;
+    color: white;
+}
+
+.page{
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 60px);
+}
+
+.maincontent{
+    flex: 3;
+    background-color: aliceblue;
+    color: black;
+}
+
+.sidebar{
+    flex: 1;
+    background-color: lightcoral;
+    color: white;
+}
+
+footer{
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: crimson;
+    color: white;
+}
