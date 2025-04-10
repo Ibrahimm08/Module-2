@@ -53,11 +53,13 @@ header h1{
 
 .page{
     display: flex;
+    flex-wrap: wrap;
     height: calc(100vh - 90px);
 }
 .maincontent{
     flex-flow: row wrap;
     flex: 3;
+    overflow: scroll;
     background-color: var(--text-bg);
     color: var(--text-clr);
     transition: background-color,color, ease 2s;
@@ -72,6 +74,7 @@ header h1{
 }
 .images{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 25x;
     align-items: center;
@@ -86,7 +89,7 @@ header h1{
 
 .sidebar{
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     justify-content: space-around;
     flex: 1;
     overflow: scroll;
@@ -124,4 +127,25 @@ footer{
     background-color: var(--header-bg);
     color: var(--text-clr);
     transition: background-color, ease 2s;
+}
+
+
+@media only screen and (max-width:768px){
+    .page{
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar{
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .maincontent{
+        flex-flow: column wrap;
+    }
+    .images{
+        flex-direction: column;
+    }
+    .images img:nth-child(n){
+        rotate: 0deg;
+    }
 }
