@@ -3,32 +3,67 @@ html{
     height: 100%;
     width: 100%;
 }
+:root{
+    --header-bg:navy;
+    --sidebar-bg:lightcoral;
+    --footer-bg:crimson;
+    --text-clr:black;
+    --text-bg:white;
+    --button-clr:white;
+    --button-bg:black;
+}
+
+.DarkMode{
+    --header-bg:rgb(102, 31, 102);
+    --sidebar-bg:rgb(85, 84, 84);
+    --footer-bg:rgb(36, 36, 36);
+    --text-clr:white;
+    --text-bg:black;
+    --button-clr:black;
+    --button-bg:white;
+}
 
 header{
-    height: 30px;
+    height: 50px;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    background-color: navy;
+    background-color: var(--header-bg);
     color: white;
+    transition: background-color, ease 2s;
+}
+
+.DarkModebutton{
+    background-color: var(--button-bg);
+    color: var(--button-clr);
+    border: solid white 0.1px;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-right: 20px;
 }
 
 .page{
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
 }
 
 .maincontent{
     flex: 3;
-    background-color: aliceblue;
-    color: black;
+    background-color: var(--text-bg);
+    color: var(--text-clr);
+    transition: background-color,color, ease 2s;
 }
 
 .sidebar{
     flex: 1;
-    background-color: lightcoral;
+    background-color: var(--sidebar-bg);
     color: white;
+    transition: background-color,color, ease 2s;
 }
 
 footer{
@@ -36,6 +71,7 @@ footer{
     height: 30px;
     justify-content: center;
     align-items: center;
-    background-color: crimson;
+    background-color: var(--footer-bg);
     color: white;
+    transition: background-color, ease 2s;
 }
