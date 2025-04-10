@@ -12,6 +12,7 @@ html{
     --text-bg:white;
     --button-clr:white;
     --button-bg:black;
+    --link-clr:navy;
 }
 
 .DarkMode{
@@ -22,6 +23,7 @@ html{
     --text-bg:black;
     --button-clr:black;
     --button-bg:white;
+    --link-clr:var(--text-clr);
 }
 
 header{
@@ -87,10 +89,14 @@ header h1{
 .navigation a{
     display: block;
     text-decoration: none;
-    color: var(--text-clr);
+    font-weight: bold;
+    color: var(--link-clr);
     transition: color ease 2s;
-
 }
+.navigation a:active{
+    text-decoration: underline;
+}
+
 footer{
     display: flex;
     height: 30px;
