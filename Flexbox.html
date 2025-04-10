@@ -9,12 +9,14 @@
 </head>
 <body>
     <header>
+        <span class="sidebarButton" onclick="OpenSideBar()">&#9776</span>
         <h1>My Flexbox layout</h1>
         <button class="DarkModebutton" onclick="ToggleDarkMode()">Toggle Dark Mode</button>
     </header>
     
     <div class="page">
-        <div class="sidebar"> 
+        <div class="sidebar" id="sideNav"> 
+            <a href="javascript:void(0)" onclick="CloseBar()" class="CloseBar" >&times;</a>
             <div class="profile">
                 <h1>Profile</h1>
                 <p>Name: John Doe</p>
@@ -50,7 +52,19 @@
     </div>
 
         <footer>
-            Footer information
+            <div class="FollowUs">
+                <p>Follow Us</p>
+                <p>Facebook </p>
+                <p>Twitter</p>
+            </div>
+            <div class="QuickLinks">
+                <p>Quick Links</p>
+                <p>Privacy Policy</p>
+                <p>Terms of Services</p>
+            </div>
+            <div class="Brand">
+                <h1>The Website</h1>
+            </div>
         </footer>
 </body>
 </html>
