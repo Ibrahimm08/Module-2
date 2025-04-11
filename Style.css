@@ -251,17 +251,23 @@ footer{
         color: var(--text-clr);
     }
     .sidebar{
+        display: flex;
+        position: fixed;
         flex-wrap: nowrap;
         flex-direction: column;;
         flex: 0;
-        height: 0;
+        height: 50%;
         width: 100%;
         position: fixed;
         z-index:1;
         top: 0;
         padding-top: 0px;
         padding-bottom: 0px;
+        transform: translateY(var(--trans,-100%));
         transition: 0.5s;
+    }
+    .active{
+        --trans:0;
     }
     .profile,.navigation,.contact{
         display: flex;
@@ -301,18 +307,27 @@ footer{
         color: var(--text-clr);
     }
     .sidebar{
+        display: flex;
+        position: fixed;
         flex-wrap: nowrap;
         flex-direction: column;;
         flex: 0;
+        left: 0;
         height: 100%;
-        width: 0;
+        width: 45%;
         position: fixed;
         z-index:1;
         top:0;
         padding-top: 0px;
         padding-right: 0px;
+        transform: translateX(var(--trans, -100%));
         transition: 0.5s; 
-    }  
+    } 
+    .active{
+        --trans: 0;
+    }
+    
+
     .profile,.navigation,.contact{
         display: flex;
         flex-direction: column;
