@@ -37,7 +37,61 @@ header{
 header h1{
     margin-left: 10px;
 }
+
+
+.checkboxlabel input{display: none;}
+
+
+.checkboxlabel{
+    background-color: whitesmoke;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--text-bg);
+    transition: .5s;
+    border: 3px solid var(--text-clr);
+}
+.slider::before{
+    position: absolute;
+    content: "\263E";
+    bottom: 14px; top: 5px; left: 10px;
+    font-size: larger;
+    transition: .5s;
+}
+
+input:checked + .slider{
+    background-color: var(--text-bg);
+}
+input:checked + .slider::before{
+    transform: translateX(25px) rotateZ(70deg);
+    top: 8px;
+    content: "\2600";
+    color: yellow;
+    font-size:x-large;
+    font-weight:bolder;
+}
+
+.slider.round{
+    border-radius: 35px;
+}
+
+.slider.round::before{
+    /* content: "\2600"; */
+    transform: rotateZ(40deg);
+}
+
 .DarkModebutton{
+    display: none;
     background-color: var(--button-bg);
     color: var(--button-clr);
     border: solid white 0.1px;
@@ -76,11 +130,15 @@ header h1{
 .maincontent h1{
     margin-top: 10%;
 }
+.maincontent p{
+    margin-bottom: 50px;
+}
 .images{
     display: flex;
-    flex-wrap: nowrap;
+    flex-shrink: 1;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 25x;
+    gap: 25px;
     align-items: center;
 }.images img{
     max-width: 60%;
@@ -90,13 +148,16 @@ header h1{
 }.images img:nth-child(3){
     rotate: 30deg;
 }
-
+.intro{
+    display: flex;
+    flex-direction: column;
+}
 
 
 
 .sidebar{
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: stretch;
     gap: 10px;
     flex: 1;
@@ -184,6 +245,7 @@ footer{
     .CloseBar{
         display: block;
         position: absolute;
+        margin-left: 95%;
         font-size: 36px;
         text-decoration: none;
         color: var(--text-clr);
@@ -213,7 +275,58 @@ footer{
         flex-flow: column wrap;
     }
     .images{
+        flex-wrap: wrap;
+
+    }
+    .images img:nth-child(n){
+        rotate: 0deg;
+    }
+}
+@media screen and (max-width:768px) {
+    .page{
+        display: flex;
         flex-direction: column;
+    }
+    .sidebarButton{
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .CloseBar{
+        display: block;
+        position: absolute;
+        margin-left: 90%;
+        font-size: 36px;
+        text-decoration: none;
+        color: var(--text-clr);
+    }
+    .sidebar{
+        flex-wrap: nowrap;
+        flex-direction: column;;
+        flex: 0;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index:1;
+        top:0;
+        padding-top: 0px;
+        padding-right: 0px;
+        transition: 0.5s; 
+    }  
+    .profile,.navigation,.contact{
+        display: flex;
+        flex-direction: column;
+        line-height: 0%;
+        max-height: 100%;
+        width: auto;
+        margin-right: 20px;
+    }
+    .maincontent{
+        flex-flow: column wrap;
+    }
+    .images{
+        flex-wrap: wrap;
+
     }
     .images img:nth-child(n){
         rotate: 0deg;
